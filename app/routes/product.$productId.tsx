@@ -44,6 +44,11 @@ export default function Product(){
     const product = useLoaderData<typeof loader>();
     const fetcher = useFetcher();
 
+    /** useFetcher and useLoaderData hooks are central to the state management of this app.
+     * useFetcher is very convenient when you need to retrieve data without changing navigation state
+     * 
+     */
+
     return (<>
     <Header/>
     <div className="font-sans bg-white dark:bg-slate-900">
@@ -130,17 +135,7 @@ export default function Product(){
             <div className="  mt-16 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] shadow-slate-200 p-6">
                 <h3 className="text-xl font-bold text-slate-200 mb-3">Product information</h3>
                 <p className="text-sm text-slate-200">{product.description}</p>
-                {/* <ul className="mt-4 space-y-6 text-slate-200">
-                    <li className="text-sm">TYPE <span className="ml-4 float-right">LAPTOP</span></li>
-                    <li className="text-sm">RAM <span className="ml-4 float-right">16 BG</span></li>
-                    <li className="text-sm">SSD <span className="ml-4 float-right">1000 BG</span></li>
-                    <li className="text-sm">PROCESSOR TYPE <span className="ml-4 float-right">INTEL CORE I7-12700H</span></li>
-                    <li className="text-sm">PROCESSOR SPEED <span className="ml-4 float-right">2.3 - 4.7 GHz</span></li>
-                    <li className="text-sm">DISPLAY SIZE INCH <span className="ml-4 float-right">16.0</span></li>
-                    <li className="text-sm">DISPLAY SIZE SM <span className="ml-4 float-right">40.64 cm</span></li>
-                    <li className="text-sm">DISPLAY TYPE <span className="ml-4 float-right">OLED, TOUCHSCREEN, 120 Hz</span></li>
-                    <li className="text-sm">DISPLAY RESOLUTION <span className="ml-4 float-right">2880x1620</span></li>
-                </ul> */}
+              
             </div>
 
             <div className="mt-16 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] shadow-slate-200 p-6">

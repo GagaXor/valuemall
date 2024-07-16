@@ -1,40 +1,51 @@
-# Welcome to Remix!
 
-- 📖 [Remix docs](https://remix.run/docs)
+## Documentation
 
-## Development
+[Documentation](https://linktodocumentation)
 
-Run the dev server:
+To get started with this run
 
-```shellscript
+```sh
+npm i -save
+```
+
+The above command installs the required libraries and packages for the app.
+
+
+The run 
+
+```sh
+npm run setup
+```
+
+to setup your database migration, initialzation and seeding.
+
+After completion, run
+
+```sh
 npm run dev
 ```
 
-## Deployment
+to run the app in development mode.
 
-First, build your app for production:
+### State Management
 
-```sh
-npm run build
-```
+State management in this app is implemented using the `useFetcher`,  `useLoaderData` and `useActionData` hooks.
 
-Then run the app in production mode:
+The `useFetcher` hook is a hook for interacting with the server outside of navigation. 
 
-```sh
-npm start
-```
+The `useActionData` accesses the data from the latest action. The server theorectically should be the central source of truth in an app, but sometimes, due to complex state management tools like redux, the app state becomes duplicated in client and server. In turn this makes the app more complex as network states like 'isLoading' or 'isError' need to be accounted for. The use of these hooks makes the state management simpler, eliminating possiblilities of code redudancy and reduxing app complexity.
 
-Now you'll need to pick a host to deploy it to.
+To learn more visit 
 
-### DIY
+[Remix State Management](https://remix.run/docs/en/main/discussion/state-management)
+ 
+ ### Dynamic Routing
+Dynamic routing is implemented using remix's file based routing strategey.It is possible to declare the parameters by prefixing them with a $ in the file name.
 
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
+This implemented can be observed in the `app/routes/product.$productId.tsx` route component.
 
-Make sure to deploy the output of `npm run build`
+To learn more visit 
 
-- `build/server`
-- `build/client`
+[Dynamic Routes](https://remix.run/docs/en/main/file-conventions/routes)
 
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.

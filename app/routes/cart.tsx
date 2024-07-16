@@ -26,6 +26,9 @@ export const loader: LoaderFunction = async ({ request }) => {
   return json({ cart });
 };
 
+
+
+
 export const action: ActionFunction = async ({ request }) => {
   const requiredUserId = await requireUserId(request);
   const formData = await request.formData();
@@ -51,7 +54,9 @@ export const action: ActionFunction = async ({ request }) => {
 };
 
 export default function Cart(){
+
   const { cart } = useLoaderData<LoaderData>();
+
   const totalItemCount =
     cart?.cartItems.reduce((acc, item) => acc + item.quantity, 0) ?? 0;
   const grandTotal =

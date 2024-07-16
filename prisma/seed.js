@@ -27,6 +27,9 @@ async function seed() {
   console.log(`Database has been seeded. 🌱`);
 }
 
+/**
+ * SEeds the database with Initialization data
+ */
 seed()
   .catch((e) => {
     console.error(e);
@@ -38,6 +41,12 @@ seed()
   });
 
 // eslint-disable-next-line no-unused-vars
+
+/**
+ * Fetches data from a dummy Json api and and writes the data to a file.
+ */
+
+
 async function initJsonFile(){
   fetch('https://dummyjson.com/products/category/mobile-accessories')
 .then(async res => {

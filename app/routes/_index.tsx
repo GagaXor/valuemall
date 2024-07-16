@@ -7,6 +7,7 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+// THis the root route of the Application. This is the index Component
 export default function Index() {
   return (
     <main className="dark:bg-gray-800 bg-white relative overflow-hidden h-screen">
